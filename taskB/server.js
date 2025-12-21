@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the 'taskB' directory
 app.use(express.static(path.join(__dirname)));
 
-// --- Database Connection ---
+//  Database Connection 
 
 const db = mysql.createPool({
     host: 'localhost',
@@ -20,11 +20,11 @@ const db = mysql.createPool({
     database: 'CA2T2'
 }).promise();
 
-// --- Routes ---
+// Routes 
 
 // Serve the HTML form
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'form.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Handle form submission
